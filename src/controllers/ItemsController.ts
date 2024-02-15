@@ -1264,7 +1264,7 @@ export async function getItemDetails(request: Request, response: Response): Prom
         model.cardCode = CardCode;
         model.wareHouse = wareHouse;
         //model.itemCode = itemCode;
-        model.key = `'${alias}'`;
+        model.key = `${alias}`;
 
         // Call procedure
         const result = await ProductsProcedure(model);
