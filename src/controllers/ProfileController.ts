@@ -417,6 +417,10 @@ export async function getShoppingCart(request: Request, response: Response, inte
         model.cardCode = CardCode;
         model.wareHouse = wareHouse;
         model.key = argItemCode;
+
+        if (model.key){
+            model.key = model.key.replace(/^'|'$/g, '');
+        }
         // Call procedure
         const results = await ProductsProcedure(model);
 
